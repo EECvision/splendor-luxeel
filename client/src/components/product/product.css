@@ -1,0 +1,12 @@
+.item {
+  transition: all 0.1s cubic-bezier(0.075, 0.82, 0.165, 1)
+}
+
+.item:hover{
+  transform: scale(1.01);
+  box-shadow: 1px 1px 5px gray;
+}
+
+
+
+
