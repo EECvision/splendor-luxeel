@@ -24,15 +24,15 @@ const Menu = ({ title, items, routeName, color }) => {
   }
 
   return (
-    <div className="w-full flex flex-col items-center justify-center mb-2 md:mb-12">
-      <div className={`w-full max-w-6xl flex justify-between items-center text-white md:rounded-t-lg bg-${color}-500 p-4`}>
+    <div className="w-full flex flex-col items-center justify-center mb-2 md:mb-6">
+      <div className={`w-full max-w-screen-xl flex justify-between items-center text-white md:rounded-t-lg bg-${color}-500 p-4`}>
         <div className="text-lg uppercase">{title}</div>
         <NavLink to={`/${routeName}`}
           className="text-lg uppercase px-4"> See all <span className="lnr lnr-arrow-right"></span>
         </NavLink>
       </div>
 
-        <div className="w-full max-w-6xl flex justify-center shadow-lg overflow-hidden py-4 bg-white md:rounded-b-lg">
+        <div className="w-full max-w-screen-xl flex justify-center shadow-lg overflow-hidden py-4 bg-white md:rounded-b-lg">
           {
             items
               .filter((item, idx) => idx < filterIdx)

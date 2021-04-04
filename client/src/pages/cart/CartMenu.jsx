@@ -9,6 +9,7 @@ import CartItem from './CartItem.jsx';
 import Footer from '../../components/footer/Footer';
 import { NavLink } from 'react-router-dom';
 import CartMobile from './Cart-mobile';
+import StripeCheckoutButton from '../../components/stripe-payment/stripe-button';
 
 const Cart = ({ cartItems, count, total, toggleDropdown, isToggle, setToggle }) => {
 
@@ -60,15 +61,19 @@ const Cart = ({ cartItems, count, total, toggleDropdown, isToggle, setToggle }) 
         </div>
         <div className="w-full bg-white flex items-center justify-center p-4 mb-24">
           <div className="w-full max-w-2xl lg:max-w-5xl flex flex-col flex-col-reverse md:flex-row items-center sm:items-end justify-center md:justify-end">
-            <NavLink to="/" className="w-full max-w-xs md:w-auto text-gray-300 flex justify-evenly text-xl items-center shadow-lg border border-gray-300 px-12 py-2 md:mr-4">
+            <NavLink to="/" className="w-full max-w-xs md:w-auto text-gray-300 flex justify-evenly text-xl items-center shadow-lg border border-gray-300 px-12 py-2 md:mr-12">
               <span className="inline md:hidden text-xl font-bold lnr lnr-cart"></span>
               <span className="inline md:hidden uppercase text-gray-600 text-lg font-medium">back</span>
               <span className="hidden md:inline capitalize text-gray-600 font-medium">continue shopping</span>
               <span className="inline md:hidden text-xl font-bold lnr lnr-pointer-left"></span>
             </NavLink>
-            <NavLink to="#checkout" className="w-full max-w-xs md:w-auto text-white text-center md:text-xl font-medium shadow-lg bg-pink-600 hover:bg-pink-700 px-12 py-2 mb-2 md:mb-0">
-              <span className="inline md:hidden uppercase">checkout</span>
-              <span className="hidden md:inline capitalize">go to checkout</span>
+            <NavLink to="#checkout" className="w-full max-w-xs md:w-auto flex items-center justify-center  mb-2 md:mb-0">
+              <span className="font-medium shadow-lg bg-white border border-gray-300 px-4 py-2 shadow-lg rounded mr-2">
+                <i className="text-pink-600 text-xl fas fa-phone-alt" aria-hidden="true"></i>
+              </span>
+              <span className="flex-1 font-medium bg-white text-right shadow-lg px-4 py-2 rounded">
+                <StripeCheckoutButton price={total} />
+              </span>
             </NavLink>
           </div>
         </div>

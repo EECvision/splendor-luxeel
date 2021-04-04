@@ -31,9 +31,14 @@ const ProductDescription = ({ toggleDropdown, item, addToCart, isToggle, setTogg
               <div className="w-64 h-64  md:mr-8 m-2">
                 <img className="w-full h-full" src={imageUrl} alt="product" />
               </div>
-              <div className="hidden md:flex flex-1">
-                <div>share this product</div>
-                <div>links...</div>
+              <div className="flex flex-1 items-end justify-start mb-3 md:mb-0">
+                <div>Share on:</div>
+                <a href={`https://api.whatsapp.com/send?text=${document.URL}`}>
+                  <i className="text-green-600 text-lg fab fa-whatsapp mx-2"></i>
+                </a>
+                <a href={`https://facebook.com/sharer/sharer.php?u=${document.URL}`}>
+                  <i className="text-blue-600 text-lg fab fa-facebook-f"></i>
+                </a>
               </div>
             </div>
             <div className='w-full'>
@@ -78,13 +83,13 @@ const ProductDescription = ({ toggleDropdown, item, addToCart, isToggle, setTogg
             </div>
           </div>
         </div>
-        <div className="hidden lg:flex w-full md:max-w-xs shadow-lg rounded-lg overflow-hidden shadow-lg">
+        <div className="hidden w-full md:max-w-xs shadow-lg rounded-lg overflow-hidden shadow-lg">
           <div className="bg-white">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus, quibusdam dolorem dolorum officia aspernatur molestiae culpa adipisci earum, ex aliquid dolor minima eum tenetur placeat odio accusantium et blanditiis atque?
           </div>
         </div>
       </div>
-      <div className="w-full"> <Footer/></div>
+      <div className="w-full"> <Footer /></div>
     </div>
   )
 }

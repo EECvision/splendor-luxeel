@@ -25,7 +25,7 @@ const Menu = ({ itemCollections }) => {
   }
   return (
     <div className="w-full flex items-center justify-center">
-      <div className="w-full max-w-6xl relative flex items-center justify-center md:mb-12">
+      <div className="w-full max-w-screen-xl relative flex items-center justify-center">
         <div onScroll={(e) => setScrollPos(menuRef.current.scrollLeft)} ref={menuRef} className="main w-full flex items-center justify-start whitespace-nowrap overflow-auto md:rounded-lg bg-white p-2">
           {
             itemCollections.map(item => (

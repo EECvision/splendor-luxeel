@@ -6,7 +6,7 @@ const Item = ({ item: { name, imageUrl, price } }) => {
 
   return (
     <NavLink to={`/${name}`}>
-      <div className="item relative w-40  sm:w-56 flex flex-col items-center justify-center p-2">
+      <div className="item relative w-40  sm:w-56 flex flex-col items-center justify-center p-2 border border-gray-200 mx-1">
         <div className="w-full h-40 sm:h-56 p-2 mb-2">
           <img className="w-full h-full" src={imageUrl} alt="product" />
         </div>

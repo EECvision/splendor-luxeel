@@ -11,7 +11,7 @@ const LogIn = ({ toggleDropdown, isToggle, setToggle }) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    handleClick()
+    // handleClick()
   })
   
   function handleClick() {

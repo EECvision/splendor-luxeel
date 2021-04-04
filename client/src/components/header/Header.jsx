@@ -30,38 +30,50 @@ const Header = ({ pageHeader, activeDropdown, toggleDropdown, setToggleNav, cart
   }, [currentUser])
 
   const handleNavClick = (val) => {
-    if (windowWidth >= 768) {
-      const { ...newDropdown } = activeDropdown
-      for (const key in newDropdown) {
-        if (key === val) {
-          newDropdown[key] = !activeDropdown[val]
-        } else {
-          newDropdown[key] = false
-        }
+    // if (windowWidth >= 768) {
+    const { ...newDropdown } = activeDropdown
+    for (const key in newDropdown) {
+      if (key === val) {
+        newDropdown[key] = !activeDropdown[val]
+      } else {
+        newDropdown[key] = false
       }
-      toggleDropdown(newDropdown);
     }
+    toggleDropdown(newDropdown);
+    // }
   }
 
+
   return (
-    <div className={`fixed top-0 left-0 z-10 top-0 w-full transition-top duration-300 ease-out shadow-lg px-2 lg:px-12 py-3 flex items-center justify-between bg-white mb-12`}>
+    <div className={`fixed top-0 left-0 z-10 top-0 w-full transition-top duration-300 ease-out shadow-lg px-2 lg:px-8 py-3 flex items-center justify-between bg-white mb-12`}>
       <div className="w-auto flex items-center justify-center">
-        <button onClick={()=> setSideNav(!sideNav)} className={`${pageHeader ? 'flex ' : 'flex md:hidden'} text-2xl md:text-4xl font-bold md:mx-6 mr-4 px-2 lnr lnr-menu`}></button>
-        <div className="sm:hidden"><NavDropdown toggle={sideNav} setToggle={()=>setSideNav(!sideNav)}/></div>
-        <div className="sm:block hidden"><NavDropdownLg toggle={sideNav}/></div>       
+        <button onClick={() => setSideNav(!sideNav)} className={`${pageHeader ? 'flex ' : 'flex md:hidden'} text-2xl md:text-4xl font-bold md:mr-6 mr-4 px-2 lnr lnr-menu`}></button>
+        <div className="sm:hidden"><NavDropdown toggle={sideNav} setToggle={() => setSideNav(!sideNav)} /></div>
+        <div className="sm:block hidden"><NavDropdownLg toggle={sideNav} /></div>
         <NavLink to="/" className="cursor-default flex items-center justify-center">
           <div className="text-2xl md:text-3xl font-medium text-gray-700">Splendor Luxeel</div>
-          <span  className="hidden sm:block text-4xl lnr lnr-cart"></span>
+          <span className="hidden sm:block text-4xl lnr lnr-cart"></span>
         </NavLink>
       </div>
       <div className="w-auto flex items-center justify-center">
         <div
           onMouseOver={() => setToggleNav(true)} onMouseLeave={() => setToggleNav(false)}
           className="relative w-auto flex flex-col items-center text-center"
-         >
+        >
           <div onClick={() => handleNavClick('login')} className="cursor-pointer w-full flex items-center justify-center md:px-3 py-">
-            <NavLink to='/customer/account/login' className="md:hidden text-lg md:text-2xl font-bold mr-2 lnr lnr-user"></NavLink>
-            <span className="hidden md:inline text-lg md:text-2xl font-bold mr-2 lnr lnr-user"></span>
+            {
+              currentUser
+                ?
+                <>
+                  <NavLink to='/customer/account/login' className="md:hidden text-lg md:text-2xl text-gray-600 font-bold mr-2 fas fa-user-check"></NavLink>
+                  <span className="hidden md:inline text-lg md:text-2xl font-bold mr-2 fas fa-user-check text-gray-600"></span>
+                </>
+                :
+                <>
+                  <NavLink to='/customer/account/login' className="md:hidden text-lg md:text-2xl text-gray-600 font-bold mr-2 lnr lnr-user"></NavLink>
+                  <span className="hidden md:inline text-lg md:text-2xl font-bold mr-2 lnr lnr-user text-gray-600"></span>
+                </>
+            }
             {
               currentUser
                 ? <div className="hidden md:block w-auto text-xl mr-2 capitalize">Hi, {user.charAt(0).toUpperCase() + user.slice(1)}</div>
@@ -72,11 +84,11 @@ const Header = ({ pageHeader, activeDropdown, toggleDropdown, setToggleNav, cart
             </span>
           </div>
           {
-            !activeDropdown.login 
-            ? null
-            : currentUser 
-            ? <div className="absolute top-12"><LogoutDropdown /></div>
-            : <div className="absolute top-12"><LoginDropdown /></div>
+            !activeDropdown.login
+              ? null
+              : !currentUser
+                ? <div className={`absolute ${windowWidth <= 768 ? 'right-0 top-10' : 'top-12'}`}><LoginDropdown /></div>
+                : <div className={`absolute ${windowWidth <= 768 ? 'right-0 top-10' : 'top-12'}`}><LogoutDropdown /> </div>
           }
         </div>
         <div
