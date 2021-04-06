@@ -25,8 +25,8 @@ const Banner = ({ collections }) => {
       <div className="w-full max-w-screen-xl flex items-center justify-between">
         <div className="hidden md:block w-64 bg-white mr-6 h-96 p-4border border-gray-300 rounded p-2">
           <div className="w-full flex items-center justify-start mb-2 cursor-default">
-            <span className="mr-2 text-pink-600">::</span>
-            <div className="text-base text-gray-700 font-medium"> Categories</div>
+          <span className="font-medium text-xl mr-2 text-pink-600 lnr lnr-store"></span>
+            <div className="text-2xl text-gray-700 font-medium"> Categories</div>
           </div>
           {
             collections.map(({ id, title, routeName }) => (

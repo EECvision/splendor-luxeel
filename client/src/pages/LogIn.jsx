@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import Footer from '../components/footer/Footer';
 import Header from '../components/header/Header';
-import LogInForm from '../components/log-in/LogInForm';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { isToggle, toggleActiveDropdown } from "../redux/nav/nav.actions";
 import { selectIsToggle } from "../redux/nav/nav.selectors";
+import LogInFormContainer from '../components/log-in/LoginForm.container';
 
 const LogIn = ({ toggleDropdown, isToggle, setToggle }) => {
 
@@ -24,9 +24,9 @@ const LogIn = ({ toggleDropdown, isToggle, setToggle }) => {
     }
   }
   return (
-    <div onClick={handleClick} className="w-full h-screen flex flex-col items-center justify-between">
+    <div onClick={handleClick} className="w-full h-screen overflow-auto flex flex-col items-center justify-between">
       <Header pageHeader />
-      <LogInForm />
+      <LogInFormContainer />
       <Footer />
     </div>
   )

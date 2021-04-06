@@ -50,7 +50,7 @@ const Header = ({ pageHeader, activeDropdown, toggleDropdown, setToggleNav, cart
         <button onClick={() => setSideNav(!sideNav)} className={`${pageHeader ? 'flex ' : 'flex md:hidden'} text-2xl md:text-4xl font-bold md:mr-6 mr-4 px-2 lnr lnr-menu`}></button>
         <div className="sm:hidden"><NavDropdown toggle={sideNav} setToggle={() => setSideNav(!sideNav)} /></div>
         <div className="sm:block hidden"><NavDropdownLg toggle={sideNav} /></div>
-        <NavLink to="/" className="cursor-default flex items-center justify-center">
+        <NavLink to="/" className="cursor-pointer flex items-center justify-center">
           <div className="text-2xl md:text-3xl font-medium text-gray-700">Splendor Luxeel</div>
           <span className="hidden sm:block text-4xl lnr lnr-cart"></span>
         </NavLink>
@@ -86,9 +86,11 @@ const Header = ({ pageHeader, activeDropdown, toggleDropdown, setToggleNav, cart
           {
             !activeDropdown.login
               ? null
-              : !currentUser
-                ? <div className={`absolute ${windowWidth <= 768 ? 'right-0 top-10' : 'top-12'}`}><LoginDropdown /></div>
-                : <div className={`absolute ${windowWidth <= 768 ? 'right-0 top-10' : 'top-12'}`}><LogoutDropdown /> </div>
+              : currentUser
+                ? <div className={`absolute ${windowWidth <= 768 ? 'right-0 top-10' : 'top-12'}`}><LogoutDropdown/></div>
+                : windowWidth <= 768
+                ? null
+                :<div className="absolute top-12"><LoginDropdown /> </div>
           }
         </div>
         <div

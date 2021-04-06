@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import Header from '../../components/header/Header';
 import { connect } from 'react-redux';
 import { isToggle, toggleActiveDropdown } from '../../redux/nav/nav.actions';
@@ -12,7 +12,7 @@ import CartMobile from './Cart-mobile';
 import StripeCheckoutButton from '../../components/stripe-payment/stripe-button';
 
 const Cart = ({ cartItems, count, total, toggleDropdown, isToggle, setToggle }) => {
-
+  const [callTip, setCallTip] = useState(false);
   window.scrollTo(0, 0);
 
   const handleClick = () => {
@@ -23,6 +23,10 @@ const Cart = ({ cartItems, count, total, toggleDropdown, isToggle, setToggle }) 
       })
       setToggle(true)
     }
+  }
+
+  const caller = () => {
+    setCallTip(!callTip)
   }
 
   return (
@@ -67,14 +71,24 @@ const Cart = ({ cartItems, count, total, toggleDropdown, isToggle, setToggle }) 
               <span className="hidden md:inline capitalize text-gray-600 font-medium">continue shopping</span>
               <span className="inline md:hidden text-xl font-bold lnr lnr-pointer-left"></span>
             </NavLink>
-            <NavLink to="#checkout" className="w-full max-w-xs md:w-auto flex items-center justify-center  mb-2 md:mb-0">
-              <span className="font-medium shadow-lg bg-white border border-gray-300 px-4 py-2 shadow-lg rounded mr-2">
-                <i className="text-pink-600 text-xl fas fa-phone-alt" aria-hidden="true"></i>
-              </span>
-              <span className="flex-1 font-medium bg-white text-right shadow-lg px-4 py-2 rounded">
+            <div className="w-full max-w-xs md:w-auto flex items-center justify-center  mb-2 md:mb-0">
+              <div className="relative">
+                <div className={`${callTip ? 'block' : 'hidden'} absolute -top-12 right-8 w-auto flex items-center justify-between border border-gray-200 shadow-lg rounded bg-white px-3 py-1`}>
+                  <div className="w-full text-left text-xl font-medium text-pink-600 mr-4">08064819800</div>
+                  <div className="font-medium shadow-lg bg-white border border-gray-300 px-3 py-1 shadow-lg rounded">
+                    <a href="tel:+2348064819800">
+                      <i className="text-pink-600 text-lg fas fa-phone-alt" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+                <div onClick={caller} className="cursor-pointer font-medium shadow-lg bg-white border border-gray-300 px-4 py-2 shadow-lg rounded mr-2">
+                  <i className="text-pink-600 text-xl fas fa-phone-alt" aria-hidden="true"></i>
+                </div>
+              </div>
+              <span className={`${total ? 'flex-1' : 'hidden'} font-medium bg-white text-right shadow-lg px-4 py-2 rounded`}>
                 <StripeCheckoutButton price={total} />
               </span>
-            </NavLink>
+            </div>
           </div>
         </div>
       </div>

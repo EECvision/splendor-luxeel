@@ -2,9 +2,12 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import FormInput from '../form-input/form-input.component';
 import { connect } from 'react-redux';
-import { emailSignInStart, googleSignInStart } from '../../redux/user/user.actions';
+import { emailSignInStart, googleSignInStart, resetError } from '../../redux/user/user.actions';
+import { selectError } from '../../redux/user/user.selectors';
+import { createStructuredSelector } from 'reselect';
+import ErrorMessage from '../error-message/Error-message';
 
-const LogInForm = ({ signInWithGoogle, signInWithEmail }) => {
+const LogInForm = ({ signInWithGoogle, signInWithEmail, error, resetErr }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
@@ -19,6 +22,12 @@ const LogInForm = ({ signInWithGoogle, signInWithEmail }) => {
 
   return (
     <div className="w-full flex items-center justify-center mb-20 mt-20 md:mt-32">
+      {
+        error
+        ? <ErrorMessage clickHandler={resetErr} error={error} />
+        : null
+
+      }
       <div className="w-full max-w-2xl">
       <div className="hidden md:block w-full text-center text-pink-600 text-2xl font-medium mb-12">Login</div>
       <div className="md:hidden w-full flex items-center justify-between px-4">
@@ -64,9 +73,14 @@ const LogInForm = ({ signInWithGoogle, signInWithEmail }) => {
   )
 }
 
-const mapDispatchToProps = dispatch => ({
-  signInWithGoogle: user => dispatch(googleSignInStart(user)),
-  signInWithEmail: user => dispatch(emailSignInStart(user))
+const mapStateToProps = createStructuredSelector({
+  error: selectError
 })
 
-export default connect(null, mapDispatchToProps)(LogInForm)
+const mapDispatchToProps = dispatch => ({
+  signInWithGoogle: user => dispatch(googleSignInStart(user)),
+  signInWithEmail: user => dispatch(emailSignInStart(user)),
+  resetErr: ()=> dispatch(resetError())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(LogInForm)
