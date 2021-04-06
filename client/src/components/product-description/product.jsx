@@ -10,6 +10,7 @@ import { NavLink } from 'react-router-dom';
 
 const ProductDescription = ({ toggleDropdown, item, addToCart, isToggle, setToggle }) => {
   const { name, imageUrl, price } = item;
+  window.scrollTo(0, 0);
 
   const handleClick = () => {
     if (!isToggle) {

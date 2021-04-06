@@ -92,6 +92,11 @@ const Cart = ({ cartItems, count, total, toggleDropdown, isToggle, setToggle }) 
           </div>
         </div>
       </div>
+      <div className="w-full max-w-screen-md flex items-center justify-between flex-wrap text-gray-100 font-medium text-lg bg-gray-600 mb-2 py-1 px-4 rounded">
+        <div className="text-center ">Test Credit Card: 4242 4242 4242 4242</div>
+        <div>Expiry: 01/23</div>
+        <div>CVC: 123 </div>
+      </div>
       <div className="w-full" ><Footer /></div>
     </div>
   )
