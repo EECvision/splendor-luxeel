@@ -10,9 +10,9 @@ const Item = ({ item: { name, imageUrl, price } }) => {
         <div className="w-full h-40 sm:h-56 p-2 mb-2">
           <img className="w-full h-full" src={imageUrl} alt="product" />
         </div>
-        <div className="w-full text-center text-xl text-gray-700 truncate">{name}</div>
-        <div className="w-full text-center md:text-left text-xl font-medium"> &#8358; {price}</div>
-        <div className="w-full text-center md:text-left text-sm opacity-50">&#8358; <span className="line-through">{price + 9}</span></div>
+        <div className="w-full text-center text-base sm:text-xl text-gray-700 truncate">{name}</div>
+        <div className="w-full text-center md:text-left text-base md:text-xl font-medium"> &#8358; {price}</div>
+        <div className="w-full text-center md:text-left text-xs sm:text-sm opacity-50">&#8358; <span className="line-through">{price + 9}</span></div>
       </div>
     </NavLink>
   )

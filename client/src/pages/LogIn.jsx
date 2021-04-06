@@ -6,6 +6,7 @@ import { createStructuredSelector } from 'reselect';
 import { isToggle, toggleActiveDropdown } from "../redux/nav/nav.actions";
 import { selectIsToggle } from "../redux/nav/nav.selectors";
 import LogInFormContainer from '../components/log-in/LoginForm.container';
+import './signIn-signUp.css';
 
 const LogIn = ({ toggleDropdown, isToggle, setToggle }) => {
 
@@ -24,7 +25,7 @@ const LogIn = ({ toggleDropdown, isToggle, setToggle }) => {
     }
   }
   return (
-    <div onClick={handleClick} className="w-full h-screen overflow-auto flex flex-col items-center justify-between">
+    <div onClick={handleClick} className="hide-scroll w-full h-screen overflow-auto flex flex-col items-center justify-between">
       <Header pageHeader />
       <LogInFormContainer />
       <Footer />

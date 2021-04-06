@@ -11,7 +11,6 @@ import { selectIsToggle } from '../redux/nav/nav.selectors';
 import { createStructuredSelector } from 'reselect';
 
 const Home = ({ toggleDropdown, isToggle, setToggle }) => {
-  
   useEffect(()=>{
     window.scrollTo(0, 0);
   })
@@ -25,7 +24,7 @@ const Home = ({ toggleDropdown, isToggle, setToggle }) => {
       setToggle(true)
     }
   }
-
+  
   return (
     <div className="w-full h-screen" onClick={handleClick}>
       <Header />

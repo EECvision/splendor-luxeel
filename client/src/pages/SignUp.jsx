@@ -6,12 +6,13 @@ import { createStructuredSelector } from 'reselect';
 import { isToggle, toggleActiveDropdown } from "../redux/nav/nav.actions";
 import { selectIsToggle } from "../redux/nav/nav.selectors";
 import SignUpFormContainer from '../components/sign-up/SignUpForm.container';
+import './signIn-signUp.css';
 
 const SignUp = ({ toggleDropdown, isToggle, setToggle }) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    handleClick()
+    // handleClick()
   })
   
   function handleClick() {
@@ -25,7 +26,7 @@ const SignUp = ({ toggleDropdown, isToggle, setToggle }) => {
   }
 
   return (
-    <div onClick={handleClick} className="w-full h-screen overflow-auto flex flex-col items-center justify-between">
+    <div onClick={handleClick} className="hide-scroll w-full h-screen overflow-auto flex flex-col items-center justify-between">
       <Header pageHeader />
       <SignUpFormContainer />
       <Footer />

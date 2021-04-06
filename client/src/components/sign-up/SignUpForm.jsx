@@ -58,10 +58,10 @@ class SignUpForm extends React.Component {
 
         }
         <div className="w-full max-w-2xl">
-          <div className="hidden md:block w-full text-center text-pink-600 text-xl font-medium">CREATE ACCOUNT</div>
+          <div className="hidden md:block w-full text-center text-pink-600 text-xl font-medium mb-8">CREATE ACCOUNT</div>
           <div className="md:hidden w-full flex items-center justify-between px-4">
-            <NavLink to='/customer/account/login' className="w-1/2 text-gray-700 text-sm text-center font-medium py-2">LOGIN</NavLink>
-            <NavLink to='/customer/account/signup' className="w-1/2 text-gray-700 border-b-2 border-pink-700 text-sm text-center font-medium py-2">CREATE ACCOUNT</NavLink>
+            <NavLink to='/customer/account/login' className="w-1/2 text-gray-700 text-sm text-center font-medium py-2 mb-12">LOGIN</NavLink>
+            <NavLink to='/customer/account/signup' className="w-1/2 text-gray-700 border-b-2 border-pink-700 text-sm text-center font-medium py-2 mb-12">CREATE ACCOUNT</NavLink>
           </div>
           <form onSubmit={this.handleSubmit} className="w-full flex flex-col items-start justify-evenly px-4 md:p-0">
             <FormInput

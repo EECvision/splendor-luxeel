@@ -71,9 +71,9 @@ const Cart = ({ cartItems, count, total, toggleDropdown, isToggle, setToggle }) 
               <span className="hidden md:inline capitalize text-gray-600 font-medium">continue shopping</span>
               <span className="inline md:hidden text-xl font-bold lnr lnr-pointer-left"></span>
             </NavLink>
-            <div className="w-full max-w-xs md:w-auto flex items-center justify-center  mb-2 md:mb-0">
+            <div className="w-full max-w-xs md:w-auto flex items-center justify-between  mb-2 md:mb-0">
               <div className="relative">
-                <div className={`${callTip ? 'block' : 'hidden'} absolute -top-12 right-8 w-auto flex items-center justify-between border border-gray-200 shadow-lg rounded bg-white px-3 py-1`}>
+                <div className={`${callTip ? 'block' : 'hidden'} absolute -top-16 -right-40 md:right-8 w-auto flex items-center justify-between border border-gray-200 shadow-lg rounded bg-white px-3 py-1`}>
                   <div className="w-full text-left text-xl font-medium text-pink-600 mr-4">08064819800</div>
                   <div className="font-medium shadow-lg bg-white border border-gray-300 px-3 py-1 shadow-lg rounded">
                     <a href="tel:+2348064819800">
