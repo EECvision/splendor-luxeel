@@ -48,9 +48,9 @@ const ProductDescription = ({ toggleDropdown, item, addToCart, isToggle, setTogg
                 <div className="w-full text-left text-lg">Make: <span>Lorem ipsum dolor sum corporis quia eat lo lore</span></div>
               </div>
               <div className="w-full border-b-2 border-gray-200 px-4 py-1 mb-4">
-                <div className="w-full text-left text-2xl font-bold mb-2">&#8358; {price}</div>
+                <div className="w-full text-left text-2xl font-bold mb-2">&#36; {price}</div>
                 <div className="w-full text-sm text-left opacity-50">
-                  <span className="mr-4">&#8358; <span className="line-through">{price - 9}</span></span>
+                  <span className="mr-4">&#36; <span className="line-through">{price - 3}</span></span>
                   <span className="bg-pink-300 font-bold text-pink-500 px-2 py-1 rounded">-{price - 9}%</span>
                 </div>
               </div>
