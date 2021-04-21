@@ -1,4 +1,4 @@
-# Splendor Luxeel - An eCommerce shop for individuals, small and medium businesses
+# Splendor-Luxeel - An eCommerce shop for individuals, small and medium businesses
 
 
 ## Table of contents
@@ -35,8 +35,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/EECvision/splendor-luxeel)
-- Live Site URL: [Add live site URL here](https://splendor-luxeel.vercel.app/)
+- Live Site URL: [splendor-luxeel](https://splendor-luxeel.vercel.app/)
 
 
 ## My process

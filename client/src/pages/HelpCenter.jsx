@@ -12,7 +12,7 @@ const HelpCenter = ({ toggleDropdown, isToggle, setToggle }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
     // handleClick()
-  })
+  },[])
   
   function handleClick() {
     if (!isToggle) {

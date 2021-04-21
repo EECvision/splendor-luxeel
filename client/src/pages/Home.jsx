@@ -13,7 +13,7 @@ import { createStructuredSelector } from 'reselect';
 const Home = ({ toggleDropdown, isToggle, setToggle }) => {
   useEffect(()=>{
     window.scrollTo(0, 0);
-  })
+  },[])
   
   const handleClick = () => {
     if (!isToggle) {

@@ -10,8 +10,8 @@ import { selectIsToggle } from "../redux/nav/nav.selectors";
 const ForgotPassword = ({ toggleDropdown, isToggle, setToggle }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    handleClick()
-  })
+    // handleClick()
+  },[])
 
   function handleClick() {
     if (!isToggle) {

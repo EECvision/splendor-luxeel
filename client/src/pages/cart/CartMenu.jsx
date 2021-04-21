@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
 import Header from '../../components/header/Header';
 import { connect } from 'react-redux';
 import { isToggle, toggleActiveDropdown } from '../../redux/nav/nav.actions';
@@ -13,7 +13,9 @@ import StripeCheckoutButton from '../../components/stripe-payment/stripe-button'
 
 const Cart = ({ cartItems, count, total, toggleDropdown, isToggle, setToggle }) => {
   const [callTip, setCallTip] = useState(false);
-  window.scrollTo(0, 0);
+  useEffect(()=> {
+    window.scrollTo(0, 0);
+  },[])
 
   const handleClick = () => {
     if (!isToggle) {

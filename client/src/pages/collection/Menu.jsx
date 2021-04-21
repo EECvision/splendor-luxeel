@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Item from './Item';
 
 const Menu = ({ title, items }) => {
-  window.scrollTo(0, 0);
+  useEffect(()=> {
+    window.scrollTo(0, 0);
+  },[])
 
   return (
     <>
