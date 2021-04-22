@@ -50,8 +50,8 @@ const ProductDescription = ({ toggleDropdown, item, addToCart, isToggle, setTogg
               <div className="w-full border-b-2 border-gray-200 px-4 py-1 mb-4">
                 <div className="w-full text-left text-2xl font-bold mb-2">&#36; {price}</div>
                 <div className="w-full text-sm text-left opacity-50">
-                  <span className="mr-4">&#36; <span className="line-through">{price - 3}</span></span>
-                  <span className="bg-pink-300 font-bold text-pink-500 px-2 py-1 rounded">-{price - 9}%</span>
+                  <span className="mr-4">&#36; <span className="line-through">{price + 9}</span></span>
+                  <span className="bg-pink-300 font-bold text-pink-500 px-2 py-1 rounded">-{parseInt((9 /(price + 9)) * 100) }%</span>
                 </div>
               </div>
               <div className="md:hidden w-full text-left p-4">

@@ -29,8 +29,8 @@ const CartItem = ({ item, plusItem, minusItem, removeItem }) => {
         </div>
         <div className="w-48 h-full text-center border-l border-gray-200 py-2">
           <div className="text-lg">&#36; {price}</div>
-          <div className="text-gray-300 line-through">&#36; {price - 9}</div>
-          <div className="text-sm text-gray-500 capitalize">saving: &#36; {parseInt(price/3)}</div>
+          <div className="text-gray-300 line-through">&#36; {price +  9}</div>
+          <div className="text-sm text-gray-500 capitalize">saving: &#36; 9 </div>
         </div>
         <div className="w-48 h-full text-center text-lg text-gray-400 font-bold border-l border-gray-200 py-2 pr-3">
           &#36; {price * quantity}

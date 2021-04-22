@@ -62,7 +62,7 @@ const Cart = ({ cartItems, count, total, toggleDropdown, isToggle, setToggle }) 
           </div>
           <div className="w-full flex justify-between sm:justify-end items-center pr-4">
             <span className="text-xl text-gray-500 mr-16">Total:</span>
-            <span className="text-3xl text-pink-500 font-bold">&#8358; {total}</span>
+            <span className="text-3xl text-pink-500 font-bold">&#36; {total}</span>
           </div>
         </div>
         <div className="w-full bg-white flex items-center justify-center p-4 mb-24">
