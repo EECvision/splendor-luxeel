@@ -14,7 +14,7 @@ const CartItem = ({ item, plusItem, minusItem, removeItem }) => {
         <div className="flex-1">
         <div className="text-black font-medium">{name}</div>
           <div className="other descriptions py-2"></div>
-          <span className="text-2xl text-gray-400 font-medium">&#8358; {price}</span>
+          <span className="text-2xl text-gray-400 font-medium">&#36; {price}</span>
         </div>
       </div>
       <div className="w-full flex items-center justify-center border-t border-gray-200 pt-4">
